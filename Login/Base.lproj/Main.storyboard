@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6me-Su-alR">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="kp8-vm-Tax">
+            <objects>
+                <navigationController id="6me-Su-alR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Nkp-uO-05G">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mgT-L2-qzI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzH-yc-j9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="-585"/>
+        </scene>
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mY6-7x-s8D">
+                                <rect key="frame" x="82" y="259" width="250" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5np-zP-K0U">
+                                <rect key="frame" x="82" y="301" width="250" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yt4-Ho-u4y">
+                                <rect key="frame" x="175.33333333333334" y="349" width="63.666666666666657" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                <connections>
+                                    <segue destination="OHj-9i-e8c" kind="show" id="PGz-c2-xKZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcA-zF-V7I">
+                                <rect key="frame" x="20" y="381" width="144" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forgot Username?"/>
+                                <connections>
+                                    <action selector="forgotUsernameAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NuY-SC-r3a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMG-py-5mo">
+                                <rect key="frame" x="252" y="381" width="140" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XFC-2h-wE8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="kcA-zF-V7I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1MA-m0-bxw"/>
+                            <constraint firstItem="5np-zP-K0U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="30h-gv-1v1"/>
+                            <constraint firstItem="5np-zP-K0U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="301" id="63g-nY-Ebt"/>
+                            <constraint firstItem="5np-zP-K0U" firstAttribute="top" secondItem="mY6-7x-s8D" secondAttribute="bottom" constant="8" id="BNS-3W-z8f"/>
+                            <constraint firstItem="kcA-zF-V7I" firstAttribute="top" secondItem="5np-zP-K0U" secondAttribute="bottom" constant="46" id="DFY-jU-vPd"/>
+                            <constraint firstItem="kcA-zF-V7I" firstAttribute="baseline" secondItem="oMG-py-5mo" secondAttribute="baseline" id="GDg-Ei-k9P"/>
+                            <constraint firstItem="mY6-7x-s8D" firstAttribute="centerX" secondItem="5np-zP-K0U" secondAttribute="centerX" id="Jft-a6-t6g"/>
+                            <constraint firstItem="mY6-7x-s8D" firstAttribute="trailing" secondItem="5np-zP-K0U" secondAttribute="trailing" id="JvQ-F1-612"/>
+                            <constraint firstItem="5np-zP-K0U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="QUN-y3-auP"/>
+                            <constraint firstItem="oMG-py-5mo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kcA-zF-V7I" secondAttribute="trailing" constant="8" symbolic="YES" id="Rie-W0-gvR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMG-py-5mo" secondAttribute="trailing" constant="22" id="ZeG-yd-YC8"/>
+                            <constraint firstItem="5np-zP-K0U" firstAttribute="centerX" secondItem="Yt4-Ho-u4y" secondAttribute="centerX" id="iCK-Ql-uY0"/>
+                            <constraint firstItem="Yt4-Ho-u4y" firstAttribute="top" secondItem="5np-zP-K0U" secondAttribute="bottom" constant="14" id="v1R-L7-k3C"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="wZK-K2-0Tv"/>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="oMG-py-5mo" id="tBr-zd-lfb"/>
+                        <outlet property="forgotUsernameButton" destination="kcA-zF-V7I" id="YTJ-7a-U1I"/>
+                        <outlet property="usernameTextField" destination="mY6-7x-s8D" id="eo4-xv-nOy"/>
+                        <segue destination="OHj-9i-e8c" kind="show" identifier="ForgottenUsernameOrPassword" id="Vbt-6w-0lK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="528" y="-585"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aev-CH-baW">
+            <objects>
+                <viewController id="OHj-9i-e8c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8XL-TH-xgr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fWL-a4-SZD"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="2wR-V6-AiT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zag-td-hfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="-585"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vbt-6w-0lK"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
